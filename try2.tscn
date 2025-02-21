@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://MENUBG.png" type="Texture" id=1]
+[ext_resource path="res://Sherman-Display.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://DMSerifDisplay-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://try2.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -712.0
+margin_top = -420.0
+margin_right = 760.0
+margin_bottom = 412.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -417.0
+margin_top = -108.0
+margin_right = 417.0
+margin_bottom = 108.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 834.0
+margin_bottom = 275.0
+custom_colors/font_color = Color( 0.72549, 0.152941, 0.152941, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "BATCH 1"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -104.0
+margin_right = 56.0
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+margin_right = 112.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 2 )
+text = "START"
+
+[node name="Button2" type="Button" parent="VBoxContainer2"]
+margin_top = 45.0
+margin_right = 112.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 3 )
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Button2" to="." method="_on_Button2_pressed"]
